@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FootstepHandler : MonoBehaviour
+public class a_FootstepHandler : MonoBehaviour
 {
     // アニメーションイベント用のダミーメソッド
     public void OnFootstep()

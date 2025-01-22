@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;  //シーンの切り替えに必要
 
 public class ChangeScene : MonoBehaviour
 {
-    public string sceneName;    //読み込むシーン名
+    public string a_sceneName;    //読み込むシーン名
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,6 @@ public class ChangeScene : MonoBehaviour
     //シーンを読み込む
     public void Load()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(a_sceneName);
     }
 }

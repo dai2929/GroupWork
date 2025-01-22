@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class a_EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 2;   //敵の最大体力
     int currentHealth;  //変動する体力
@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
          
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //Bulletのタグのオブジェクトに当たった場合
         if (other.CompareTag("Bullet"))

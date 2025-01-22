@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunController : MonoBehaviour
+public class a_GunController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float moveLimit = 5f;    //左右の移動制限
@@ -16,6 +16,9 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //playingの時以外は動作しない
+        if (a_GameChecker.gameState != "playing") return;
+
         //左右の入力を受け取る
         float horizontalInput = Input.GetAxis("Horizontal");    //A/Dキーまたは左右矢印キー
         Vector3 moveDirection = new Vector3(horizontalInput, 0, 0) * moveSpeed * Time.deltaTime;

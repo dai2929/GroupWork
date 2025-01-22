@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class a_EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;  //敵のプレハブ
     public Transform spawnPoint;    //出現位置
@@ -30,8 +30,9 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //時間を定義
         elapsedTime += Time.deltaTime;
-        
 
         //出現させる敵を時間経過に応じて変更
         for (int i = 0; i < enemyChangeIntervals.Length; i++)
@@ -57,19 +58,17 @@ public class EnemySpawner : MonoBehaviour
     //コルーチンはシンプルなコードかつUpdate内に書かない為処理も軽くできる
     IEnumerator SpawnEnemies()
     {
+
         while (true)
         {
-            SpawnEnemy();
+            //ゲーム状態がplayingの時だけ敵を生成
+            if (a_GameChecker.gameState == "playing")
+            {
+                SpawnEnemy();
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
     }
-
-    //敵の種類をランダム指名
-    //GameObject SampleEnemy()
-    //{
-    //    int index = Random.Range(0, enemyPrefabs.Length);
-    //    return enemyPrefabs[index];
-    //}
 
     void SpawnEnemy()
     {
@@ -84,4 +83,5 @@ public class EnemySpawner : MonoBehaviour
         //敵を生成
         Instantiate(enemyPrefabs[currentEnemyIndex], randomPosition, spawnPoint.rotation);
     }
+
 }
