@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class a_BulletsDestroyer : MonoBehaviour
+public class a_EnemyDestroyer : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,13 +18,7 @@ public class a_BulletsDestroyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet")
-        {
-            Destroy(other.gameObject);
-        }
-
-        //強化弾も消す
-        if (other.gameObject.tag == "StrongBullet")
+        if (other.gameObject.tag == "Enemy")
         {
             Destroy(other.gameObject);
         }

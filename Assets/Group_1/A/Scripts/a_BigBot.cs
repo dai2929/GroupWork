@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class a_GreenBot : a_BaseEnemy
+public class a_BigBot : a_BaseEnemy
 {
-    // 強力な弾丸のダメージ量を調整
-    public int strongBulletDamage = 2;
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
@@ -15,7 +12,7 @@ public class a_GreenBot : a_BaseEnemy
 
         if (other.CompareTag("StrongBullet"))
         {
-            TakeDamage(strongBulletDamage);
+            TakeDamage(2);
             Destroy(other.gameObject);
         }
     }

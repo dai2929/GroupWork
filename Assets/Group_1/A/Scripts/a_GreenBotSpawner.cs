@@ -16,6 +16,9 @@ public class a_GreenBotSpawner : MonoBehaviour
 
     IEnumerator SpawnGreenBots()
     {
+        // 初回の出現間隔を待つ
+        yield return new WaitForSeconds(spawnInterval);
+
         while (true)
         {
             if (a_GameChecker.gameState == "playing")

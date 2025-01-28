@@ -12,19 +12,17 @@ public class a_EnemySpawner : MonoBehaviour
     int currentEnemyIndex = 0;  //現在出現させる敵のインデックス
     float elapsedTime = 0f; //経過時間
 
-    public float spawnInterval;
-    public float initialSpawnInterval = 3f;    //出現間隔
+    float spawnInterval; //出現間隔
+    public float initialSpawnInterval = 3f;    //初期の出現間隔
     public float minSpawnInterval = 0.1f;   //最小の出現間隔
     public float spawnIntervalDecreseRate = 0.05f;  //減少する間隔(秒ごと)
 
     // Start is called before the first frame update
     void Start()
     {
-        ////一定間隔で敵を出現させる
-        //InvokeRepeating(nameof(SpawnEnemy), 0f, spawnInterval);
-
         spawnInterval = initialSpawnInterval;   //初期値を設定
         StartCoroutine(SpawnEnemies());
+        StartCoroutine(ResetSpawnInterval());
     }
 
     // Update is called once per frame
@@ -67,6 +65,17 @@ public class a_EnemySpawner : MonoBehaviour
                 SpawnEnemy();
             }
             yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    // 出現間隔を20秒ごとにリセットするコルーチン
+    IEnumerator ResetSpawnInterval()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(20f); // 20秒ごとにリセット
+            spawnInterval = initialSpawnInterval;
+            Debug.Log("出現間隔をリセットしました: " + spawnInterval);
         }
     }
 

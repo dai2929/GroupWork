@@ -1722,8 +1722,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76559be8033d48043acd837a02c8c0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletUpgradeItemPrefab: {fileID: 7924064968695113038, guid: 706413e777db7ee43bb024505888aab0, type: 3}
   health: 3
+  itemPrefab: {fileID: 7924064968695113038, guid: 706413e777db7ee43bb024505888aab0, type: 3}
+  hpTextPrefab: {fileID: 217138163042882395, guid: 344dce7aa8ea14542b002d53eb4a74a4, type: 3}
+  strongBulletDamage: 2
 --- !u!1 &8090128222836063334
 GameObject:
   m_ObjectHideFlags: 0

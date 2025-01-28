@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 205015301162542910}
   - component: {fileID: 116869039739159618}
   - component: {fileID: 6921711813286931216}
-  - component: {fileID: 3812558824510383941}
-  - component: {fileID: 6538644715125408621}
+  - component: {fileID: 5573244779818214760}
+  - component: {fileID: 8872117009292528253}
   m_Layer: 8
-  m_Name: BulletBlue
-  m_TagString: Bullet
+  m_Name: BulletRed
+  m_TagString: StrongBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5a3dcb9b1a5b8f24a8300e99e173a3fb, type: 2}
+  - {fileID: 2100000, guid: 23b296824a08e3341bd483a1b600c1af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,7 +135,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3812558824510383941
+--- !u!114 &5573244779818214760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ef36ab39364a145ad6564c24cfef71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 8300000, guid: bc8bc1752483ba940a46ff71bfdab223, type: 3}
---- !u!82 &6538644715125408621
+  fireSound: {fileID: 8300000, guid: 9071ad0c3d6c80a4c86dfc2f8c14ef20, type: 3}
+--- !u!82 &8872117009292528253
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,9 +159,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 0.5
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 0.6
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -234,7 +234,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

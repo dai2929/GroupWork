@@ -20,6 +20,8 @@ public class a_GameChecker : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (gameState == "gameclear") return;
+
         //Enemyタグを持つオブジェクトがGameOverPointに触れた場合
         if (other.CompareTag("Enemy"))
         {
